@@ -20,5 +20,13 @@ const product_info=new mongo.Schema({
         type: String,
         required: true
     },
+    product_origin:{
+        type:String,
+        required:true
+    },
+    product_type:{
+        type:String,
+        required:true
+    }
 })
 export default mongo.model("2)Product",product_info)
