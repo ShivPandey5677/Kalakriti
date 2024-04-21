@@ -29,6 +29,7 @@ export async function addProducts(req, res) {
             const existingProduct = await R1.findOne({
                 userid: userInfo.id,
                 product_name: product.name,
+                product_type:product.type,
             });
 
             // If the product exists, update it; otherwise, create a new product

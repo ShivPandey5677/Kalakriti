@@ -8,7 +8,7 @@ import multer from "multer"
 import cors from "cors"
 import authRoutes from "./routes/auth.js"
 import productRoutes from "./routes/product.js"
-
+import bidRoutes from "./routes/bidder.js"
 const app=express();
 app.use((req,res,next)=>{
     res.header("Access-Control-Allow-Credentials",true)
@@ -34,6 +34,7 @@ const storage = multer.diskStorage({
   const upload = multer({ storage: storage })
 app.use("/api/auth",authRoutes)
 app.use("/api/products",productRoutes)
+app.use("/api/bidders",bidRoutes)
 app.use("/api/upload",upload.single("file"),(req,res)=>{
     const file=req.file;
     console.log(file)
